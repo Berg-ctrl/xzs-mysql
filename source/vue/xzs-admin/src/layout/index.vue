@@ -9,7 +9,7 @@
       </div>
       <app-main />
       <div class="foot-copyright">
-        <span>Copyright © 2020 </span>
+        <span>Copyright © 2021 </span>
       </div>
       <back-to-top :visibility-height="100" :back-position="0" transition-name="fade" ref="backTop"/>
     </div>

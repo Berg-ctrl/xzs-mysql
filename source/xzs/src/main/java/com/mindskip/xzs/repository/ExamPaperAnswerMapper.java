@@ -25,6 +25,8 @@ public interface ExamPaperAnswerMapper extends BaseMapper<ExamPaperAnswer> {
 
     List<ExamPaperAnswer> studentPage(ExamPaperAnswerPageVM requestVM);
 
+    List<ExamPaperAnswer> allStudentPage(@Param("id") String id, @Param("uid") String uid);
+
     Integer selectAllCount();
 
     List<KeyValue> selectCountByDate(@Param("startTime") Date startTime, @Param("endTime") Date endTime);

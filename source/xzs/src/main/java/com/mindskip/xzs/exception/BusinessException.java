@@ -1,7 +1,7 @@
 package com.mindskip.xzs.exception;
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 public class BusinessException extends RuntimeException {
 

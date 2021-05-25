@@ -3,16 +3,16 @@
   <view>
     <swiper indicator-dots="false" autoplay="true" interval="5000" duration="1000">
       <swiper-item>
-        <image src="/assets/carousel/1.png" class="slide-image" />
+        <image src="/assets/carousel/1.jpg" class="slide-image" />
       </swiper-item>
       <swiper-item>
-        <image src="/assets/carousel/2.png" class="slide-image" />
+        <image src="/assets/carousel/2.jpg" class="slide-image" />
       </swiper-item>
       <swiper-item>
-        <image src="/assets/carousel/3.png" class="slide-image" />
+        <image src="/assets/carousel/3.jpg" class="slide-image" />
       </swiper-item>
       <swiper-item>
-        <image src="/assets/carousel/4.png" class="slide-image" />
+        <image src="/assets/carousel/4.jpg" class="slide-image" />
       </swiper-item>
     </swiper>
   </view>

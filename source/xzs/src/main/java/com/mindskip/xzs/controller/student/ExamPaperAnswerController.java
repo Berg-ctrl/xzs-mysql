@@ -6,6 +6,8 @@ import com.mindskip.xzs.domain.*;
 import com.mindskip.xzs.domain.enums.ExamPaperAnswerStatusEnum;
 import com.mindskip.xzs.event.CalculateExamPaperAnswerCompleteEvent;
 import com.mindskip.xzs.event.UserEvent;
+import com.mindskip.xzs.repository.ExamPaperAnswerMapper;
+import com.mindskip.xzs.repository.UserMapper;
 import com.mindskip.xzs.service.ExamPaperAnswerService;
 import com.mindskip.xzs.service.ExamPaperService;
 import com.mindskip.xzs.service.SubjectService;
@@ -20,11 +22,13 @@ import com.mindskip.xzs.viewmodel.student.exampaper.ExamPaperAnswerPageVM;
 import com.github.pagehelper.PageInfo;
 import com.mindskip.xzs.domain.*;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Date;
+import java.util.List;
 
 @RestController("StudentExamPaperAnswerController")
 @RequestMapping(value = "/api/student/exampaper/answer")
@@ -35,6 +39,12 @@ public class ExamPaperAnswerController extends BaseApiController {
     private final ExamPaperService examPaperService;
     private final SubjectService subjectService;
     private final ApplicationEventPublisher eventPublisher;
+
+    @Autowired
+    private ExamPaperAnswerMapper examPaperAnswerMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
 
     @RequestMapping(value = "/pageList", method = RequestMethod.POST)
@@ -53,6 +63,15 @@ public class ExamPaperAnswerController extends BaseApiController {
             return vm;
         });
         return RestResponse.ok(page);
+    }
+
+    @RequestMapping(value = "/answerList")
+    public RestResponse<List<ExamPaperAnswer>> pageList2(@RequestParam String id, @RequestParam String uid , @RequestParam String uname) {
+        List<ExamPaperAnswer> examPaperAnswers = examPaperAnswerMapper.allStudentPage(id,uid);
+        for(ExamPaperAnswer examPaperAnswer : examPaperAnswers){
+            examPaperAnswer.setUserName(userMapper.selectByPrimaryKey(examPaperAnswer.getCreateUser()).getUserName());
+        }
+        return RestResponse.ok(examPaperAnswers);
     }
 
 

@@ -251,4 +251,15 @@
     limit 1
   </select>
 
+  <select id="allStudentPage"  resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from t_exam_paper_answer
+    <where>
+      exam_paper_id = #{id}
+      <if test="uid != null">
+        and create_user = #{uid}
+      </if>
+    </where>
+  </select>
 </mapper>

@@ -25,6 +25,14 @@
       <el-table-column prop="id" label="Id" width="90px"/>
       <el-table-column prop="subjectId" label="学科" :formatter="subjectFormatter" width="120px" />
       <el-table-column prop="name" label="名称"  />
+      <el-table-column  label="考生成绩" align="center"  width="160px">
+        <template slot-scope="{row}">
+        <router-link :to="{path:'/exam/paper/mark', query:{id:row.id}}" class="link-left">
+          <el-button size="mini">查看成绩</el-button>
+        </router-link>
+       </template>
+
+      </el-table-column>
       <el-table-column prop="createTime" label="创建时间" width="160px"/>
       <el-table-column  label="操作" align="center"  width="160px">
         <template slot-scope="{row}">

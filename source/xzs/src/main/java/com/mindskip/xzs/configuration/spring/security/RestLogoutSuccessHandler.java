@@ -18,7 +18,7 @@ import java.util.Date;
 /**
  * 用户登出
  *
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 @Component
 @AllArgsConstructor
@@ -33,7 +33,7 @@ public class RestLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
         if (null != springUser) {
             User user = userService.getUserByUserName(springUser.getUsername());
             UserEventLog userEventLog = new UserEventLog(user.getId(), user.getUserName(), user.getRealName(), new Date());
-            userEventLog.setContent(user.getUserName() + " 登出了学之思考试系统");
+            userEventLog.setContent(user.getUserName() + " 登出了在线考试系统");
             eventPublisher.publishEvent(new UserEvent(userEventLog));
         }
         RestUtil.response(response, SystemCode.OK);

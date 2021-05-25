@@ -20,7 +20,7 @@ import java.util.Date;
 /**
  * 登录成功返回
  *
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 @Component
 @AllArgsConstructor
@@ -34,7 +34,7 @@ public class RestAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
         User springUser = (User) authentication.getPrincipal();
         com.mindskip.xzs.domain.User user = userService.getUserByUserName(springUser.getUsername());
         UserEventLog userEventLog = new UserEventLog(user.getId(), user.getUserName(), user.getRealName(), new Date());
-        userEventLog.setContent(user.getUserName() + " 登录了学之思考试系统");
+        userEventLog.setContent(user.getUserName() + " 登录了在线考试系统");
         eventPublisher.publishEvent(new UserEvent(userEventLog));
         com.mindskip.xzs.domain.User newUser = new com.mindskip.xzs.domain.User();
         newUser.setUserName(user.getUserName());

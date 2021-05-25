@@ -7,7 +7,7 @@
       <div class="lowin-box lowin-login">
         <div class="lowin-box-inner">
           <el-form ref="loginForm" :model="loginForm" :rules="loginRules">
-            <p>学之思考试系统</p>
+            <p>在线考试系统</p>
             <div class="lowin-group">
               <label>用户名 </label>
               <el-input ref="userName" v-model="loginForm.userName" class="lowin-input" placeholder="用户名" name="userName" type="text" tabindex="1" auto-complete="on"/>
@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="account-foot-copyright">
-      <span>Copyright © 2020</span>
+      <span>Copyright © 2021</span>
     </div>
   </div>
 </template>
@@ -182,7 +182,7 @@ export default {
   .lowin a {
     color: var(--color-primary);
     text-decoration: none;
-    border-bottom: 1px dashed var(--color-semidark);
+    border-bottom: 1px dashed var(--color-primary);
     margin-top: -3px;
     padding-bottom: 2px;
   }
@@ -250,7 +250,7 @@ export default {
   }
 
   .lowin .lowin-box p {
-    color: var(--color-semidark);
+    color: var(-var(--color-primary));
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
@@ -264,7 +264,7 @@ export default {
     margin-bottom: 5px;
     display: inline-block;
     width: 100%;
-    color: var(--color-semidark);
+    color: var(--color-primary);
     font-weight: 700;
   }
 
@@ -314,7 +314,7 @@ export default {
     padding: 10px;
     font-weight: 700;
     margin-top: 20px;
-    color: var(--color-semidark);
+    color: var(--color-primary);
   }
 
   /* animation */

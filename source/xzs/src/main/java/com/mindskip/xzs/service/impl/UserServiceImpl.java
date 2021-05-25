@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {

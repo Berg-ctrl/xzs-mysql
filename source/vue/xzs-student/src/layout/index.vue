@@ -31,14 +31,14 @@
     <el-main class="student-main">
       <router-view/>
     </el-main>
-    <el-footer height="340" class="student-footer">
+    <!-- <el-footer height="340" class="student-footer">
       <div class="container">
         <div class="footer-main">
           <h4>产品介绍</h4>
           <a href="http://www.mindskip.net/sdd.html" target="_blank" class="footer-main-link">思多多智能考试平台</a>
           <a href="http://www.mindskip.net/wdd.html" target="_blank" class="footer-main-link">维多多培训考试系统</a>
           <a href="http://www.mindskip.net/xdd.html" target="_blank" class="footer-main-link">学多多考试系统</a>
-          <a href="http://www.mindskip.net/xzs.html" target="_blank" class="footer-main-link">学之思考试系统</a>
+          <a href="http://www.mindskip.net/xzs.html" target="_blank" class="footer-main-link">在线考试系统</a>
         </div>
         <div class="footer-main">
           <h4>学多多小程序</h4>
@@ -46,7 +46,7 @@
         </div>
         <div class="footer-main">
           <h4>跃考 H5、小程序</h4>
-          <img src="@/assets/code/2.png" style="width: 100px;height: 100px;"/>
+          <img src="@/assets/code/2.jpg" style="width: 100px;height: 100px;"/>
           <img src="@/assets/code/3.jpg" style="width: 100px;height: 100px;margin-left: 10px"/>
         </div>
         <div class="footer-main">
@@ -64,9 +64,9 @@
           <a href="https://gitee.com/mindskip/uexam" target="_blank"><svg-icon icon-class="gitee" style="width: 32px;height: 32px;" /></a>
         </div>
       </div>
-    </el-footer>
+    </el-footer> -->
     <div class="foot-copyright">
-      <span>Copyright © 2020</span>
+      <span>Copyright © 2021</span>
     </div>
   </el-container>
 </template>

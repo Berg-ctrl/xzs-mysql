@@ -89,6 +89,13 @@ const constantRoutes = [
         meta: { title: '试卷列表', noCache: true }
       },
       {
+        path: 'paper/mark',
+        component: () => import('@/views/exam/paper/mark'),
+        name: 'ExamPaperMark',
+        meta: { title: '考生成绩', noCache: true, activeMenu: '/exam/paper/list' },
+        hidden: true
+      },
+      {
         path: 'paper/edit',
         component: () => import('@/views/exam/paper/edit'),
         name: 'ExamPaperEdit',
@@ -153,6 +160,13 @@ const constantRoutes = [
         component: () => import('@/views/task/list'),
         name: 'TaskListPage',
         meta: { title: '任务列表', noCache: true }
+      },
+      {
+        path: 'mark',
+        component: () => import('@/views/task/mark'),
+        name: 'TaskMark',
+        meta: { title: '考生成绩', noCache: true },
+        hidden: true
       },
       {
         path: 'edit',
@@ -229,6 +243,30 @@ const constantRoutes = [
       }
     ]
   },
+  // {
+  //   path: '/mark',
+  //   component: Layout,
+  //   name: 'MarkPage',
+  //   meta: {
+  //     title: '考试成绩',
+  //     icon: 'log'
+  //   },
+  //   alwaysShow: true,
+  //   children: [
+  //     {
+  //       path: '/exam/paper/list',
+  //       component: () => import('@/views/mark/pageList'),
+  //       name: 'ExamPaperPageList',
+  //       meta: { title: '试卷列表', noCache: true }
+  //     },
+  //     {
+  //       path: '/task/list',
+  //       component: () => import('@/views/mark/list'),
+  //       name: 'TaskListPage',
+  //       meta: { title: '任务列表', noCache: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/profile',
     component: Layout,

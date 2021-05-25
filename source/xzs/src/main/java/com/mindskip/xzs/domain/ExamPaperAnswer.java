@@ -13,6 +13,16 @@ public class ExamPaperAnswer implements Serializable {
 
     private String paperName;
 
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
     private Integer paperType;
 
     private Integer subjectId;

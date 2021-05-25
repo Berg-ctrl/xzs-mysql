@@ -2,10 +2,13 @@ package com.mindskip.xzs.controller.admin;
 
 import com.mindskip.xzs.base.BaseApiController;
 import com.mindskip.xzs.base.RestResponse;
+import com.mindskip.xzs.domain.ExamPaperAnswer;
 import com.mindskip.xzs.domain.other.KeyValue;
 import com.mindskip.xzs.domain.User;
 import com.mindskip.xzs.domain.UserEventLog;
 import com.mindskip.xzs.domain.enums.UserStatusEnum;
+import com.mindskip.xzs.repository.ExamPaperAnswerMapper;
+import com.mindskip.xzs.repository.UserMapper;
 import com.mindskip.xzs.service.AuthenticationService;
 import com.mindskip.xzs.service.UserEventLogService;
 import com.mindskip.xzs.service.UserService;
@@ -17,6 +20,7 @@ import com.mindskip.xzs.viewmodel.admin.user.*;
 import lombok.AllArgsConstructor;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,7 +30,7 @@ import java.util.UUID;
 
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 @RestController("AdminUserController")
 @RequestMapping(value = "/api/admin/user")

@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * @author 武汉思维跳跃科技有限公司
+ * @author 边佳慧
  */
 public class PageInfoHelper {
 

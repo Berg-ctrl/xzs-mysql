@@ -37,9 +37,13 @@ public class QuestionController extends BaseApiController {
             vm.setCreateTime(DateTimeUtil.dateFormat(q.getCreateTime()));
             vm.setScore(ExamUtil.scoreToVM(q.getScore()));
             TextContent textContent = textContentService.selectById(q.getInfoTextContentId());
-            QuestionObject questionObject = JsonUtil.toJsonObject(textContent.getContent(), QuestionObject.class);
-            String clearHtml = HtmlUtil.clear(questionObject.getTitleContent());
-            vm.setShortTitle(clearHtml);
+            QuestionObject questionObject = new QuestionObject();
+            if(textContent!=null)
+            {
+                questionObject = JsonUtil.toJsonObject(textContent.getContent(), QuestionObject.class);
+                String clearHtml = HtmlUtil.clear(questionObject.getTitleContent());
+                vm.setShortTitle(clearHtml);
+            }
             return vm;
         });
         return RestResponse.ok(page);
